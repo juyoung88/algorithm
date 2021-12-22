@@ -12,7 +12,9 @@ int main()
             cout << result;
             return 0;
         }
+        n-=3;
+        result++;
     }
-
+    cout << "-1";
     return 0;
 }
