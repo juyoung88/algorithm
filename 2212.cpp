@@ -29,12 +29,18 @@ int main()
         cin >> sens[i];
     }
     sort(sens,sens+n);
-    for(int i=0;i<n;i++)
-        cout << sens[i] << "\n";
+    // for(int i=0;i<n;i++)
+    //     cout << sens[i] << "\n";
     for(int i=0;i<n-1;i++){
         con[i] = sens[i+1] - sens[i];
     }
-
+    // for(int i=0;i<n-1;i++)
+    //     cout << con[i] << "\n";
+    sort(con,con+(n-1));
+    int result=0;
+    for(int i=0;i<(n-k);i++)
+        result += con[i];
+    cout << result;
 
 
 
