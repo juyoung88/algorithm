@@ -9,10 +9,10 @@ int main()
 {
     int n,m;
     priority_queue<long long,vector<long long>,greater<long long>> pq;
-    int answer=0;
+    long long answer=0;
     cin >> n >> m;
     // vector<int> nums;
-    int num;
+    long long num;
     for(int i=0;i<n;i++){
         cin >> num;
         pq.push(num);
