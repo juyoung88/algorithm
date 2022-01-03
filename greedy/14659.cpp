@@ -8,22 +8,21 @@ int main()
     int n;
     cin >> n;
     vector<int> hanzo(n);
-    int check[30001];
+    int check[30001]={0,};
     for(int i=0;i<n;i++){
         cin >> hanzo[i];
     }
-    for(int i=0;i<n;i++){
-        for(int j=i;j<n;j++){
+    int answer=-1;
+    for(int i=0;i<n-1;i++){
+        for(int j=i+1;j<n;j++){
             if(hanzo[i] > hanzo[j])
                 check[i]++;
+            else
+                break;
         }
-    }
-    int max=0;
-    for(int i=0;i<n;i++){
-        if(check[i] > max)
-            max = check[i];
+        answer = max(check[i],answer);
     }
 
-    cout << max;
+    cout << answer;
     return 0;
 }
