@@ -13,7 +13,7 @@ int main()
     for(int i=0;i<n;i++)
         cin >> tips[i];
     sort(tips.begin(),tips.end(),greater<>());
-    int total=0;
+    long long total=0;
     for(int i=0;i<n;i++){
         if((tips[i]-i)<0) continue;
         total += tips[i] - (i);
