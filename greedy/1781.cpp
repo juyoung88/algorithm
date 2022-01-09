@@ -9,7 +9,6 @@ int main()
 {
     int n;
     cin >> n;
-    int date, ramen;
     vector<pair<int,int>> probs(n);
     priority_queue<int,vector<int>,greater<int>> pq;
     long long total=0;
