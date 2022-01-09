@@ -12,7 +12,7 @@ int main()
     int date, ramen;
     vector<pair<int,int>> probs(n);
     priority_queue<int,vector<int>,greater<int>> pq;
-    int total=0;
+    long long total=0;
     for(int i=0;i<n;i++)
         cin >> probs[i].first >> probs[i].second;
     sort(probs.begin(),probs.end());
