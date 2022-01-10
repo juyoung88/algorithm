@@ -20,15 +20,16 @@ int main()
 
     int iter=0;
     while(p < l){
-        for(int i=0;i<n;i++){
-            if(p >= stations[i].first)
-                pq.push(stations[i].second);
-            else break;
+        while(stations[iter].first <= p && iter < n)
+            pq.push(stations[iter++].second);
+        if(!pq.empty()) {
+            p += pq.top(),pq.pop();
+            count++;
         }
-        p += pq.top();
-        pq.pop();
-        count++;
-        
+        else if(iter==n || stations[iter].first > p){
+            count=-1;
+            break;
+        }
     }
     cout << count;
     return 0;
