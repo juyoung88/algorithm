@@ -1,42 +1,33 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
-#include <functional>
 using namespace std;
 
 int main()
 {   
     int n;
     cin >> n;
-    vector<int> A(n);
-    vector<int> B(n);
+    int A[50];
     int count=0;
     int num;
     for(int i=0;i<n;i++){
         cin >> A[i];
     }
-    for(int i=0;i<n;i++){
-        while(A[i]>0){
-            if(A[i]%2==0){
-                int flag=0;
-                for(int j=0;j<n;j++){
-                    if(A[j]%2!=0)
-                        flag=1;
-                }
-                if(flag==1){
-                    A[i]--;
-                    count++;
-                }
-                else{
-                    for(int j=0;j<n;j++)
-                        A[j]/=2;
-                    count++;
-                }
-            }
-            else{
+    while(1) {
+        bool allzero=true;
+        bool increment = false;
+        for(int i=0;i<n;i++){
+            if(A[i]) allzero = false;
+            if(A[i]%2){
                 A[i]--;
                 count++;
+                increment=true;
             }
+        }
+        if(allzero) break;
+        if(!increment){
+            for(int i=0;i<n;i++)
+                A[i]/=2;
+            count++;
         }
     }
     cout << count;
