@@ -6,8 +6,7 @@
 using namespace std;
     
 
-    
-bool visited[1000];
+bool visited[1001];
 vector<int> graph[10000];
 
 void dfs(int x) {
@@ -35,7 +34,7 @@ void bfs(int x) {
         }
     }
 }
-int main()
+int main(void)
 {   
     int n,m,init,start,end;
     cin >> n >> m >> init;
